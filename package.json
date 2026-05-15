@@ -1,0 +1,24 @@
+{
+  "name": "trabalho-conclusao",
+  "version": "1.0.0",
+  "description": "Crie uma classe que possua dois métodos: um para realizar pagamento e outro para consultar o último pagamento. Pagamentos serão armazenados como objetos Javascript dentro de uma lista de pagamentos. Cada pagamento terá as propriedades: Código de Barras, Empresa e Valor.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/welington007/trabalho-conclusao.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "module",
+  "bugs": {
+    "url": "https://github.com/welington007/trabalho-conclusao/issues"
+  },
+  "homepage": "https://github.com/welington007/trabalho-conclusao#readme",
+  "dependencies": {
+    "mocha": "^11.7.5"
+  }
+}
