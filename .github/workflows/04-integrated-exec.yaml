@@ -27,7 +27,7 @@ jobs:
       - name: Instalando dependências
         run: mocha
       - name: Inspeção de Código
-        run: yarn lint
+        run: npx lint
   unidade:
     runs-on: ubuntu-latest
     needs: [inspecao]
