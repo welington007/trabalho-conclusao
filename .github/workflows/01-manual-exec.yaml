@@ -27,7 +27,7 @@ jobs:
               with:
                 node-version: 24.x
 
-            # instalação do Yarn
+            # instalação do mocha
             - name: Instalando mocha
               run: npm install -g mocha
 

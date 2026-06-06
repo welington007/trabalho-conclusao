@@ -18,7 +18,7 @@ on:
 
 jobs:
   #nome do job
-  e2e-tests:
+  unidade:
     # maquina onde o job vai rodar
     runs-on: ubuntu-latest
 
@@ -35,17 +35,13 @@ jobs:
           node-version: 24.x
 
       # instalação do Yarn
-      - name: Instalando Yarn
-        run: npm install -g yarn
+      - name: Instalando mocha
+        run: npm install -g mocha
 
       #   instalação das dependências
       - name: Instalando dependências
-        run: yarn
+        run: mocha
 
-      # instalação dos Browsers do Playwright
-      - name: Instalando Browsers do Playwright
-        run: yarn playwright install
-
-      # executar os testes e2e
-      - name: Executando testes e2e
-        run: yarn run e2e
+      # executar os testes de unidade
+      - name: Executando testes de unidade
+        run: npx mocha
