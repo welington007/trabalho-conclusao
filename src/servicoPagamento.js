@@ -1,28 +1,32 @@
 export class ServicoDePagamento {
-  #pagamentos;
 
-  constructor() {
-    this.#pagamentos = [];
-  }
+    #pagamentos;
 
-  pagar(codigoBarras, empresa, valor) {
-    let categoria;
-
-    if (valor > 100) {
-      categoria = "cara";
-    } else {
-      categoria = "padrão";
+    constructor() {
+        this.#pagamentos = [];
     }
 
-    this.#pagamentos.push({
-      codigoBarras: codigoBarras,
-      empresa: empresa,
-      valor: valor,
-      categoria: categoria,
-    });
-  }
+    pagar(codigoBarras, empresa, valor) {
 
-  consultarUltimoPagamento() {
-    return this.#pagamentos[this.#pagamentos.length - 1];
-  }
+        let categoria;
+
+        if (valor > 100) {
+            categoria = 'cara';
+        } else {
+            categoria = 'padrão';
+        }
+
+        this.#pagamentos.push({
+            codigoBarras: codigoBarras,
+            empresa: empresa,
+            valor: valor,
+            categoria: categoria
+        });
+
+    }
+
+    consultarUltimoPagamento() {
+        return this.#pagamentos[this.#pagamentos.length - 1];
+    }
+
 }
