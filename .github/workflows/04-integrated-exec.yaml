@@ -45,7 +45,7 @@ jobs:
         run: npx mocha
 
       - name: Instalando mochawesome
-        uses: npm install --save-dev mochawesome
+        uses: npm install --save-dev mochawesome mochawesome-report-generator
 
       - name: Salvando relatórios de testes
         uses: actions/upload-artifact@v4
