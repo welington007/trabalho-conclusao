@@ -49,10 +49,10 @@ jobs:
 
       - name: Salvando relatórios de testes
         uses: actions/upload-artifact@v4
-        if: ${{ always() }}
+        if: always()
         with:
-          path: ./mocha
-          name: Relatório de Testes E2E
+          path: mochawesome-report/
+          name: mochawesome-report
   deploy:
     runs-on: ubuntu-latest
     needs: [unidade]

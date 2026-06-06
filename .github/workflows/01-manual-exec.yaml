@@ -39,15 +39,15 @@ jobs:
               run: mocha
 
             # executar os testes e2e
-      - name: Executando testes de unidade
-        run: npx mocha \
+            - name: Executando testes de unidade
+              run: npx mocha \
             --reporter mochawesome \
             --reporter-options reportDir=mochawesome-report,reportFilename=resultado,overwrite=true,html=true,json=true
 
       # Publica o relatório
-      - name: Upload do relatório
-        if: always()
-        uses: actions/upload-artifact@v4
-        with:
-          name: mochawesome-report
-          path: mochawesome-report/
+            - name: Upload do relatório
+              if: always()
+              uses: actions/upload-artifact@v4
+              with:
+                name: mochawesome-report
+                path: mochawesome-report/
