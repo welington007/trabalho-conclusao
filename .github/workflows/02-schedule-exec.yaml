@@ -1,7 +1,7 @@
 # CI de Nível 02 - Execução Agendada
 
 # nome da pipeline
-name: 'N2 - Execução Agendada'
+name: "N2 - Execução Agendada"
 
 # gatilhos / triggers - regras de disparo
 # gatilho manual = workflow_dispatch
@@ -12,7 +12,7 @@ on:
     # cronograma de execução
     # 1 - minuto, 2 - hora, 3 dia do mês, 4 - mês, 5 - dia da semana
     #Roda a cada 30 minutos
-    - cron: '*/30 * * * *'
+    - cron: "*/30 * * * *"
 jobs:
   #nome do job
   unidade:
