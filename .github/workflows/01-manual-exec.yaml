@@ -44,7 +44,7 @@ jobs:
 
       # Publica o relatório
       - name: Upload do relatório
-        if: always()
+        if: ${{ always() }}
         uses: actions/upload-artifact@v4
         with:
           name: mochawesome-report
