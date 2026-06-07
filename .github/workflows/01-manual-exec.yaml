@@ -1,51 +1,51 @@
 # CI de Nível 01 - Disparo Manual através de clique
 
 # nome da pipeline
-name: 'N1 - Execução Manual'
+name: "N1 - Execução Manual"
 
 # gatilhos / triggers - regras de disparo
 # gatilho manual = workflow_dispatch
 
 on:
-    workflow_dispatch:
+  workflow_dispatch:
 
 #tarefas dentro da pipeline = jobs
 
 jobs:
-    #nome do job
-    unidade:
-        # maquina onde o job vai rodar
-        runs-on: ubuntu-latest
+  #nome do job
+  unidade:
+    # maquina onde o job vai rodar
+    runs-on: ubuntu-latest
 
-        # passos do job
-        steps:
-            # clone do projeto
-            - uses: actions/checkout@v4
+    # passos do job
+    steps:
+      # clone do projeto
+      - uses: actions/checkout@v4
 
-            # instalção do node
-            - uses: actions/setup-node@v4
-              with:
-                node-version: 24.x
+      # instalção do node
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 24.x
 
-            # instalação do mocha
-            - name: Instalando mocha
-              run: npm install -g mocha
+      # instalação do mocha
+      - name: Instalando mocha
+        run: npm install -g mocha
 
-            - name: Instalar Mochawesome
-              run: npm install --save-dev mochawesome mochawesome-report-generator
+      - name: Instalar Mochawesome
+        run: npm install --save-dev mochawesome mochawesome-report-generator
 
-            #   instalação das dependências
-            - name: Instalando dependências
-              run: mocha
+      #   instalação das dependências
+      - name: Instalando dependências
+        run: mocha
 
-            # executar os testes e2e
-            - name: Executando testes de unidade
-              run: npx mocha \
+      # executar os testes e2e
+      - name: Executando testes de unidade
+        run: npx mocha \
 
       # Publica o relatório
-            - name: Upload do relatório
-              if: always()
-              uses: actions/upload-artifact@v4
-              with:
-                name: mochawesome-report
-                path: mochawesome-report/
+      - name: Upload do relatório
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: mochawesome-report
+          path: mochawesome-report/
