@@ -41,11 +41,15 @@ jobs:
         run: npm install -g mocha
       - name: Instalando dependências
         run: mocha
-      - name: Rodando testes unitários
-        run: npx mocha
 
       - name: Instalando mochawesome
         run: npm install --save-dev mochawesome mochawesome-report-generator
+
+      - name: Rodando testes unitários
+        run: npx mocha --reporter mochawesome --reporter-options reportDir=mochawesome-report,reportFilename=resultado,overwrite=true,html=true,json=true
+
+      - name: Verifica arquivos salvos
+        run: pwd && ls -R
 
       # Publica o relatório
       - name: Upload do relatório
